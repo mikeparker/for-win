@@ -10,6 +10,7 @@ at New-Switch, : line 121`
 * Windows updates may have broken some Hyper-V components. See https://github.com/docker/for-win/issues/1221#issuecomment-493118403 for the 'control flow guard' fix
 
 `no space left on device`
+- Typically  you've run out of space because of images, volumes, logs etc. Various ways of looking at whats there and deleting it.
 - https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device
 - https://unix.stackexchange.com/questions/203168/docker-says-no-space-left-on-device-but-system-has-plenty-of-space
 
