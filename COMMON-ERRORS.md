@@ -11,7 +11,8 @@ at New-Switch, : line 121`
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Generic failure`
 
 See https://github.com/docker/for-win/issues/1221
-* Windows updates may have broken some Hyper-V components. See https://github.com/docker/for-win/issues/1221#issuecomment-493118403 for the 'control flow guard' fix
+* Your Hyper-V configuration is likely broken. This may be caused by a windows update.
+* See https://github.com/docker/for-win/issues/1221#issuecomment-493118403 for the 'control flow guard' fix
 
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Generic failure
 at New-Switch, : line 121`
@@ -22,13 +23,6 @@ Cause: Broken network adapter (perhaps caused by windows update)
 2. Remove the broken network adapter https://blogs.msdn.microsoft.com/jjameson/2011/03/14/removing-stale-network-adapters-in-hyper-v-vm/
 3. Reset docker desktop to factory defaults
 4. Restart docker desktop
-
-`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID 317A8D7D-9484-45FC-ABD4-07083AC4454E)`
-
-`'MobyLinuxVM' failed to start worker process: Windows cannot verify the digital signature for this file. A recent hardware or software change might have installed a file that is signed incorrectly or damaged, or that might be malicious software from an unknown source. (0xC0000428). (Virtual machine ID 317A8D7D-9484-45FC-ABD4-07083AC4454E)
-at Start-MobyLinuxVM, <No file>: line 300`
-
-?
 
 `Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID E2B4DEA4-1300-43B4-9D49-BBCC2DEEC5ED)
 
@@ -53,6 +47,16 @@ See: https://github.com/docker/for-win/issues/2050
 Are you using Cisco AnyConnect?
 - stop Cisco agent, restart docker, start Cisco agent.
 
+`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start.
+
+Failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running.
+
+'MobyLinuxVM' failed to start. (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602)
+
+The Virtual Machine Management Service failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602).
+at Start-MobyLinuxVM, : line 287`
+
+?
 
 `no space left on device`
 - Typically  you've run out of space because of images, volumes, logs etc. Various ways of looking at whats there and deleting it.
@@ -67,3 +71,10 @@ Cause: Active directory / user account permissions setup
 See https://github.com/docker/for-win/issues/868
 1. You must restart after install
 2. Login to active directory and add yourself into docker-users group. using local account may fail. (https://github.com/docker/for-win/issues/868#issuecomment-352279510)
+
+`Unable to send Start: Unable to launch process: 1260`
+
+?
+
+`Error creating default "bridge" network: available `
+?
