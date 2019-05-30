@@ -14,3 +14,7 @@ at New-Switch, : line 121`
 - https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device
 - https://unix.stackexchange.com/questions/203168/docker-says-no-space-left-on-device-but-system-has-plenty-of-space
 
+`Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Inconsistent parameters PolicyStore PersistentStore and Dhcp Enabled`
+
+Are you using Cisco AnyConnect?
+- stop Cisco agent, restart docker, start Cisco agent.
