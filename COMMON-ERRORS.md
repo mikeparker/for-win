@@ -24,9 +24,9 @@ Cause: Broken network adapter (perhaps caused by windows update)
 3. Reset docker desktop to factory defaults
 4. Restart docker desktop
 
-`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID E2B4DEA4-1300-43B4-9D49-BBCC2DEEC5ED)
+`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID E2B4DEA4-1300-43B4-9D49-BBCC2DEEC5ED)`
 
-'MobyLinuxVM' failed to start worker process: Windows cannot verify the digital signature for this file. A recent hardware or software change might have installed a file that is signed incorrectly or damaged, or that might be malicious software from an unknown source. `
+`'MobyLinuxVM' failed to start worker process: Windows cannot verify the digital signature for this file. A recent hardware or software change might have installed a file that is signed incorrectly or damaged, or that might be malicious software from an unknown source. `
 
 See tickets https://github.com/docker/for-win/issues?q=is%3Aissue+%3A+Windows+cannot+verify+the+digital+signature+for+this+file+is%3Aclosed
 Likely already fixed, but its also been related to virus scanners in the past. Check your virus scanner is up to date.
@@ -47,13 +47,10 @@ See: https://github.com/docker/for-win/issues/2050
 Are you using Cisco AnyConnect?
 - stop Cisco agent, restart docker, start Cisco agent.
 
-`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start.
-
-Failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running.
-
-'MobyLinuxVM' failed to start. (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602)
-
-The Virtual Machine Management Service failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602).
+`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start.`
+`Failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running.`
+`'MobyLinuxVM' failed to start. (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602)`
+`The Virtual Machine Management Service failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602).
 at Start-MobyLinuxVM, : line 287`
 
 * Maybe VirtualBox or other 3rd party software preventing Hyper-V from running (e.g. 3rd party virus scanners)
