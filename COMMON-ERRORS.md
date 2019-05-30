@@ -80,3 +80,7 @@ See https://github.com/docker/for-win/issues/868
 
 `Error creating default "bridge" network: available `
 ?
+
+`Cannot start service xyz: failed to create endpoint XYZ on network nat: HNS failed with error : The process cannot access the file because it is being used by another process.`
+
+You are using the same port twice in two containers.
