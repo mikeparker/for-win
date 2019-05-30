@@ -8,6 +8,8 @@ See: https://github.com/docker/for-win/issues/1232
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Hyper-V encountered an error trying to access an object on computer 'EMERIO-USER' because the object was not found. The object might have been deleted. Verify that the Virtual Machine Management service on the computer is running.
 at New-Switch, : line 121`
 
+`Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Generic failure`
+
 See https://github.com/docker/for-win/issues/1221
 * Windows updates may have broken some Hyper-V components. See https://github.com/docker/for-win/issues/1221#issuecomment-493118403 for the 'control flow guard' fix
 
