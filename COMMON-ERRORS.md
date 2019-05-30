@@ -14,6 +14,18 @@ See https://github.com/docker/for-win/issues/1221
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Generic failure
 at New-Switch, : line 121`
 
+Cause: Broken network adapter (perhaps caused by windows update)
+1. Close docker desktop
+1. Remove the VM `powershell -ExecutionPolicy ByPass -File "C:\Program Files\Docker\Docker\resources\MobyLinux.ps1" -destroy`
+2. Remove the broken network adapter https://blogs.msdn.microsoft.com/jjameson/2011/03/14/removing-stale-network-adapters-in-hyper-v-vm/
+3. Reset docker desktop to factory defaults
+4. Restart docker desktop
+
+`Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID 317A8D7D-9484-45FC-ABD4-07083AC4454E)
+
+'MobyLinuxVM' failed to start worker process: Windows cannot verify the digital signature for this file. A recent hardware or software change might have installed a file that is signed incorrectly or damaged, or that might be malicious software from an unknown source. (0xC0000428). (Virtual machine ID 317A8D7D-9484-45FC-ABD4-07083AC4454E)
+at Start-MobyLinuxVM, <No file>: line 300`
+
 ?
 
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Inconsistent parameters PolicyStore PersistentStore and Dhcp Enabled`
