@@ -56,7 +56,12 @@ Failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V com
 The Virtual Machine Management Service failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602).
 at Start-MobyLinuxVM, : line 287`
 
-?
+* Maybe VirtualBox or other 3rd party software preventing Hyper-V from running (e.g. 3rd party virus scanners)
+
+Could you check if the following Hyper-V components are running?
+
+* Hyper-V Host Compute Service
+* Hyper-V Virtual Machine Management
 
 `no space left on device`
 - Typically  you've run out of space because of images, volumes, logs etc. Various ways of looking at whats there and deleting it.
