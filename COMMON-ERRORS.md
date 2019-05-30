@@ -18,3 +18,12 @@ at New-Switch, : line 121`
 
 Are you using Cisco AnyConnect?
 - stop Cisco agent, restart docker, start Cisco agent.
+
+
+`Access Denied: Unable to start Docker, you must be part of the docker-users group`
+
+Cause: Active directory / user account permissions setup
+
+See https://github.com/docker/for-win/issues/868
+1. You must restart after install
+2. Login to active directory and add yourself into docker-users group. using local account may fail. (https://github.com/docker/for-win/issues/868#issuecomment-352279510)
