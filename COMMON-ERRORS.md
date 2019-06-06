@@ -84,3 +84,32 @@ See https://github.com/docker/for-win/issues/868
 `Cannot start service xyz: failed to create endpoint XYZ on network nat: HNS failed with error : The process cannot access the file because it is being used by another process.`
 
 You are using the same port twice in two containers.
+
+## Docker stops working after a while. Docker takes too much CPU / Memory.
+
+Firstly be sure its not containers running, and if running in Linux container mode, check which processes are causing the issue:
+Inspect the memory usage of the VM processes:
+
+Enter the Linux VM shell
+`docker run -it --privileged --pid=host justincormack/nsenter1`
+
+List processes
+`top`
+
+Sort by memory then show RSS
+`{shift+m} {shift+s}`
+
+You should see something like...
+```
+Mem total:2027864 anon:718184 map:455228 free:91652
+ slab:105852 buf:23384 cache:892000 dirty:140 write:0
+Swap total:1048572 free:1043352
+  PID   VSZ^VSZRW^  RSS (SHR) DIRTY (SHR) STACK COMMAND
+ 1947 1006m  350m 31852     4 10844     0   132 containerd --config /var/run/docker/containerd/containerd.toml --log-level debug
+ 3840  463m  304m  333m     4  179m     0   132 kube-apiserver --advertise-address=192.168.65.3 --allow-privileged=true --authorization-mode=Node,RBAC --clie
+ 1940  490m  268m 71024     4 28532     0   132 /usr/local/bin/dockerd -H unix:///var/run/docker.sock --config-file /run/config/docker/daemon.json --swarm-de
+ 1337  139m  117m 39828     4 19988     0   132 /usr/bin/containerd
+ 2570  226m  104m 99512   436 35608     0   132 kubelet --kubeconfig=/etc/kubernetes/kubelet.conf --config /etc/kubeadm/kubelet.yaml --bootstrap-kubeconfig=/
+ 1538  106m  104m  104m   424  104m     0   132 rpc.statd
+...
+```
