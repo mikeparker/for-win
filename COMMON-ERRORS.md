@@ -99,17 +99,16 @@ List processes
 Sort by memory then show RSS
 `{shift+m} {shift+s}`
 
-You should see something like...
+You should see something like... (with kube running)
 ```
-Mem total:2027864 anon:718184 map:455228 free:91652
- slab:105852 buf:23384 cache:892000 dirty:140 write:0
-Swap total:1048572 free:1043352
-  PID   VSZ^VSZRW^  RSS (SHR) DIRTY (SHR) STACK COMMAND
- 1947 1006m  350m 31852     4 10844     0   132 containerd --config /var/run/docker/containerd/containerd.toml --log-level debug
- 3840  463m  304m  333m     4  179m     0   132 kube-apiserver --advertise-address=192.168.65.3 --allow-privileged=true --authorization-mode=Node,RBAC --clie
- 1940  490m  268m 71024     4 28532     0   132 /usr/local/bin/dockerd -H unix:///var/run/docker.sock --config-file /run/config/docker/daemon.json --swarm-de
- 1337  139m  117m 39828     4 19988     0   132 /usr/bin/containerd
- 2570  226m  104m 99512   436 35608     0   132 kubelet --kubeconfig=/etc/kubernetes/kubelet.conf --config /etc/kubeadm/kubelet.yaml --bootstrap-kubeconfig=/
+Mem total:2027864 anon:724576 map:455416 free:72160
+ slab:105332 buf:37220 cache:891556 dirty:144 write:0
+Swap total:1048572 free:1042424
+  PID   VSZ VSZRW^^^RSS^(SHR) DIRTY (SHR) STACK COMMAND
+ 3840  464m  304m  332m     4  179m     0   132 kube-apiserver --advertise-address=192.168.65.3 --allow-privileged=true --authorization-mode=Node,RBAC --clie
  1538  106m  104m  104m   424  104m     0   132 rpc.statd
+ 3921  211m  102m  100m     4 38308     0   132 kube-controller-manager --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf --authorization-k
+ 2570  226m  104m 99876   436 34776     0   132 kubelet --kubeconfig=/etc/kubernetes/kubelet.conf --config /etc/kubeadm/kubelet.yaml --bootstrap-kubeconfig=/
 ...
 ```
+RSS is the actual memory allocated to that process. VSZ is the maximum memory allowed for that process. `free` in the top line is how much free memory your VM has - but bear in mind even when this is low, you might have available memory as processes sometimes hang on to unused memory until its needed by something else.
