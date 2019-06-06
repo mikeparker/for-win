@@ -96,8 +96,10 @@ Enter the Linux VM shell
 List processes
 `top`
 
-Sort by memory then show RSS
-`{shift+m} {shift+s}`
+Check CPU usage on this screen.
+
+Show memory and sort by RSS
+`ss` (press s twice)
 
 You should see something like... (with kube running)
 ```
