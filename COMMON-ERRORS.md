@@ -72,6 +72,13 @@ See https://github.com/docker/for-win/issues/868
 1. You must restart after install
 2. Login to active directory and add yourself into docker-users group. using local account may fail. (https://github.com/docker/for-win/issues/868#issuecomment-352279510)
 
+`Error response from daemon: Get https://registry-1.docker.io/v2/`
+
+See https://github.com/docker/for-win/issues/4043
+
+Cause: Firewall / proxy / Custom DNS blocking access to the registry
+Solution: Likely not a bug in Docker Desktop; Probably just need to fix whatever custom proxy / firewall / dns setup is limiting connectivity.
+
 `Unable to send Start: Unable to launch process: 1260`
 
 ?
