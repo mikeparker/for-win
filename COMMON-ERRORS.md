@@ -79,6 +79,12 @@ See https://github.com/docker/for-win/issues/4043
 Cause: Firewall / proxy / Custom DNS blocking access to the registry
 Solution: Likely not a bug in Docker Desktop; Probably just need to fix whatever custom proxy / firewall / dns setup is limiting connectivity.
 
+`The process cannot access the file 'C:\Program Files\Docker\Docker\com.docker.service' because it is being used by another process.`
+
+See https://github.com/docker/for-win/issues/3919
+
+Check you have enabled virtualization on Windows.
+
 `Unable to send Start: Unable to launch process: 1260`
 
 ?
