@@ -85,6 +85,12 @@ See https://github.com/docker/for-win/issues/3919
 
 Check you have enabled virtualization on Windows.
 
+`kubernetes not starting / hanging`
+`http: TLS handshake error from 192.168.65.3:33440: remote error: tls: bad certificate`
+`x509: certificate is valid for docker-for-desktop, kubernetes, kubernetes.default, kubernetes.default.svc, kubernetes.default.svc.cluster.local, host.docker.internal, not vm.docker.internal`
+
+Known bug due to certs not being upgraded properly. See https://github.com/docker/for-win/issues/3799 for details and workaround fix.
+
 `Unable to send Start: Unable to launch process: 1260`
 
 ?
