@@ -91,6 +91,8 @@ Check you have enabled virtualization on Windows.
 
 Known bug due to certs not being upgraded properly. See https://github.com/docker/for-win/issues/3799 for details and workaround fix.
 
+We are now checking for certs on boot which should fix the issue in June release of Stable.
+
 `Unable to send Start: Unable to launch process: 1260`
 
 ?
