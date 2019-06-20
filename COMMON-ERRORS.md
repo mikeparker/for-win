@@ -69,6 +69,8 @@ at Start-MobyLinuxVM, : line 287`
 
 * Maybe VirtualBox or other 3rd party software preventing Hyper-V from running (e.g. 3rd party virus scanners)
 
+User reported VirtualBox DHCP fix: https://github.com/docker/for-win/issues/3895#issuecomment-504095490
+
 Could you check if the following Hyper-V components are running?
 
 * Hyper-V Host Compute Service
