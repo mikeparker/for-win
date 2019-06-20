@@ -15,12 +15,28 @@ See https://github.com/docker/for-win/issues/1221
 `Unable to create: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: Generic failure
 at New-Switch, : line 121`
 
+See CFG fix https://social.technet.microsoft.com/Forums/en-US/ee5b1d6b-09e2-49f3-a52c-820aafc316f9/hyperv-doesnt-work-after-upgrade-to-windows-10-1809?forum=win10itprovirt
+See also https://github.com/docker/for-win/issues/4016#event-2427857019
 Cause: Broken network adapter (perhaps caused by windows update)
+
+2 possible solutions:
+
+*Manually remove hyper V network adapter*
 1. Close docker desktop
 1. Remove the VM `powershell -ExecutionPolicy ByPass -File "C:\Program Files\Docker\Docker\resources\MobyLinux.ps1" -destroy`
 2. Remove the broken network adapter https://blogs.msdn.microsoft.com/jjameson/2011/03/14/removing-stale-network-adapters-in-hyper-v-vm/
 3. Reset docker desktop to factory defaults
 4. Restart docker desktop
+
+*Control flow guard fix*
+1. Open "Window Security"
+1. Open "App & Browser control"
+1. Click "Exploit protection settings" at the bottom
+1. Switch to "Program settings" tab
+1. Locate "C:\WINDOWS\System32\vmcompute.exe" in the list and expand it
+1. Click "Edit"
+1. Scroll down to "Code flow guard (CFG)" and uncheck "Override system settings"
+1. Start vmcompute from powershell "net start vmcompute"
 
 `Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. (Virtual machine ID E2B4DEA4-1300-43B4-9D49-BBCC2DEEC5ED)`
 
