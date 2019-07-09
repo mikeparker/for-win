@@ -103,6 +103,10 @@ See https://github.com/docker/for-win/issues/3919
 
 Check you have enabled virtualization on Windows.
 
+`Error response from daemon: driver failed programming external connectivity`
+
+Windows fast boot doesnt work with docker right now. Restart docker or disable windows fast boot.
+
 `kubernetes not starting / hanging`
 `http: TLS handshake error from 192.168.65.3:33440: remote error: tls: bad certificate`
 `x509: certificate is valid for docker-for-desktop, kubernetes, kubernetes.default, kubernetes.default.svc, kubernetes.default.svc.cluster.local, host.docker.internal, not vm.docker.internal`
