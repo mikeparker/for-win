@@ -129,6 +129,14 @@ We are now checking for certs on boot which should fix the issue in June release
 
 You are using the same port twice in two containers.
 
+```
+Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2, String path3)
+```
+
+dataFolder is set to null in settings.json. Known bug: https://github.com/docker/for-win/issues/4343
+
 ## Docker stops working after a while. Docker takes too much CPU / Memory.
 
 Firstly be sure its not containers running, and if running in Linux container mode, check which processes are causing the issue:
