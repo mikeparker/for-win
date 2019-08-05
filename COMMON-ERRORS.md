@@ -19,7 +19,9 @@ See https://github.com/docker/for-win/issues/1221
 at New-Switch, : line 121`
 
 See CFG fix https://social.technet.microsoft.com/Forums/en-US/ee5b1d6b-09e2-49f3-a52c-820aafc316f9/hyperv-doesnt-work-after-upgrade-to-windows-10-1809?forum=win10itprovirt
+
 See also https://github.com/docker/for-win/issues/4016#event-2427857019
+
 Cause: Broken network adapter (perhaps caused by windows update)
 
 2 possible solutions:
