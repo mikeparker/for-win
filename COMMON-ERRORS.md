@@ -139,6 +139,8 @@ Parameter name: path1
 
 dataFolder is set to null in settings.json. Known bug: https://github.com/docker/for-win/issues/4343
 
+Fixed in 2.1.0.1
+
 ```
 [PowerShell        ][Error  ] The required module 'Hyper-V' is not loaded. Load the module or remove the module from 'RequiredModules' in the file 'C:\Program Files\Docker\Docker\Resources\MobyLinux\MobyLinux.psd1'.
 ```
@@ -147,6 +149,14 @@ See https://github.com/docker/for-win/issues/4452#issuecomment-518815167
 
 1. Ensure Hyper-V Powershell windows feature is enabled / installed
 2. Update your system variable PsModulePath with the correct Hyper-V path. In a previous case, the Hyper-V module was present at C:\Windows\System32\WindowsPowerShell\v1.0\Modules
+
+```
+[07:41:48.179][PowerShell        ][Error  ] Windows PowerShell updated your execution policy successfully, but the setting is overridden by a policy defined at a more specific scope.  Due to the override, your shell will retain its current effective execution policy of AllSigned. Type "Get-ExecutionPolicy -List" to view your execution policy settings. For more information please see "Get-Help Set-ExecutionPolicy".
+[07:41:48.207][PowerShell        ][Error  ] AuthorizationManager check failed.
+```
+
+Known bug in 2.1.0.0. See https://github.com/docker/for-win/issues/4376
+Fixed in 2.1.0.1
 
 ## Docker stops working after a while. Docker takes too much CPU / Memory.
 
