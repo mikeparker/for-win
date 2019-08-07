@@ -158,6 +158,14 @@ See https://github.com/docker/for-win/issues/4452#issuecomment-518815167
 Known bug in 2.1.0.0. See https://github.com/docker/for-win/issues/4376
 Fixed in 2.1.0.1
 
+```
+[10:40:41.609][HyperV            ][Error  ] Unable to create: System.Management.Automation.CmdletInvocationException: Object reference not set to an instance of an object. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Docker.Core.SettingsLoader.SaveChanges(Action`1 changes)
+```
+
+Known bug in 2.1.0.0.
+Fixed in 2.1.0.1
+
 ## Docker stops working after a while. Docker takes too much CPU / Memory.
 
 Firstly be sure its not containers running, and if running in Linux container mode, check which processes are causing the issue:
