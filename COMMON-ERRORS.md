@@ -139,6 +139,15 @@ Parameter name: path1
 
 dataFolder is set to null in settings.json. Known bug: https://github.com/docker/for-win/issues/4343
 
+```
+[PowerShell        ][Error  ] The required module 'Hyper-V' is not loaded. Load the module or remove the module from 'RequiredModules' in the file 'C:\Program Files\Docker\Docker\Resources\MobyLinux\MobyLinux.psd1'.
+```
+
+See https://github.com/docker/for-win/issues/4452#issuecomment-518815167
+
+1. Ensure Hyper-V Powershell windows feature is enabled / installed
+2. Update your system variable PsModulePath with the correct Hyper-V path. In a previous case, the Hyper-V module was present at C:\Windows\System32\WindowsPowerShell\v1.0\Modules
+
 ## Docker stops working after a while. Docker takes too much CPU / Memory.
 
 Firstly be sure its not containers running, and if running in Linux container mode, check which processes are causing the issue:
