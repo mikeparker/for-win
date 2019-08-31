@@ -147,8 +147,11 @@ Fixed in 2.1.0.1
 
 See https://github.com/docker/for-win/issues/4452#issuecomment-518815167
 
+This may be caused by 3rd party programs changing or overwriting the powershell module path.
+
 1. Ensure Hyper-V Powershell windows feature is enabled / installed
 2. Update your system variable PsModulePath with the correct Hyper-V path. In a previous case, the Hyper-V module was present at C:\Windows\System32\WindowsPowerShell\v1.0\Modules
+3. Check you don't have a user environment variable PsModulePath overwriting it, and/or change it to the path above.
 
 ```
 [07:41:48.179][PowerShell        ][Error  ] Windows PowerShell updated your execution policy successfully, but the setting is overridden by a policy defined at a more specific scope.  Due to the override, your shell will retain its current effective execution policy of AllSigned. Type "Get-ExecutionPolicy -List" to view your execution policy settings. For more information please see "Get-Help Set-ExecutionPolicy".
