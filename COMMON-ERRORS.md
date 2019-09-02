@@ -64,6 +64,11 @@ Are you using Cisco AnyConnect?
 ### Unable to start: The running command stopped because the preference variable "ErrorActionPreference" or common parameter is set to Stop: 'MobyLinuxVM' failed to start. Failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running. 'MobyLinuxVM' failed to start. (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602) The Virtual Machine Management Service failed to start the virtual machine 'MobyLinuxVM' because one of the Hyper-V components is not running (Virtual machine ID E29796F3-81DE-4BA7-81DC-986110B3E602). at Start-MobyLinuxVM, : line 287
 
 * Are you running Docker Desktop from inside a virtual machine, e.g. inside virtualBox?
+
+See https://github.com/docker/for-win/issues/4231 for evidence this is caused by nested virt
+See https://github.com/docker/for-win/issues/4138 someone trying to use AWS Windows Server nested virt
+See https://github.com/docker/for-win/issues/3460 someone trying to use Azure VM nested virt
+
 * Maybe VirtualBox or other 3rd party software preventing Hyper-V from running (e.g. 3rd party virus scanners)
 
 User reported VirtualBox DHCP fix: https://github.com/docker/for-win/issues/3895#issuecomment-504095490
