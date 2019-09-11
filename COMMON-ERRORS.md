@@ -78,6 +78,10 @@ Could you check if the following Hyper-V components are running?
 * Hyper-V Host Compute Service
 * Hyper-V Virtual Machine Management
 
+### The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+
+? https://github.com/docker/for-win/issues/4685
+
 ### no space left on device
 - Typically  you've run out of space because of images, volumes, logs etc. Various ways of looking at whats there and deleting it.
 - https://stackoverflow.com/questions/30604846/docker-error-no-space-left-on-device
